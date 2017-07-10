@@ -99,6 +99,12 @@ for row in range(2, 1 + len(sorted_movies)):
     movie_number += 1
 new_movie_list.save("movie info.xlsx")
 print "Excel Sheet Generated"
+text_file = open("Output.txt", "w")
+text_file.write("%d movies done in %.1f seconds\n" % (movie_number + 1, time.time() - start_time))
 print "%d movies done in %.1f seconds" % (movie_number + 1, time.time() - start_time)
-print "Errors:"
-print ErrLog
+if len(ErrLog) != 0:
+    for entry in ErrLog:
+        text_file.write(str(entry))
+else:
+    text_file.write("No Errors")
+text_file.close()

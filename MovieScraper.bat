@@ -1,1 +1,1 @@
-start dist/MovieScraper/MovieScraper.exe
+cmd /K dist\MovieScraper\MovieScraper.exe
